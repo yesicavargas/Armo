@@ -85,7 +85,6 @@ public class frameSupply extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         labProduct = new javax.swing.JLabel();
         texIdProduct = new javax.swing.JTextField();
-        jchDate = new com.toedter.calendar.JDateChooser();
 
         texIdCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,14 +267,8 @@ public class frameSupply extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labId)
                                     .addComponent(labDate))
-                                .addGap(114, 114, 114)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(texId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jchDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(texId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -292,9 +285,7 @@ public class frameSupply extends javax.swing.JFrame {
                     .addComponent(lanName)
                     .addComponent(texName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labDate)
-                    .addComponent(jchDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(labDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labIdCity)
@@ -488,7 +479,6 @@ public class frameSupply extends javax.swing.JFrame {
     private javax.swing.JButton btnPrevious;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
-    private com.toedter.calendar.JDateChooser jchDate;
     private javax.swing.JLabel labDate;
     private javax.swing.JLabel labId;
     private javax.swing.JLabel labIdCity;
@@ -509,7 +499,7 @@ public class frameSupply extends javax.swing.JFrame {
         boolean validate = !(texId.getText().equals("") 
                 || texName.getText().equals("")
                 || texIdCity.getText().equals("")
-                || (jchDate.getDate() == null)
+/**                || (jchDate.getDate() == null)*/
                 || texPrice.getText().equals("")
                 || texIdProduct.getText().equals("")
                 || texIdCliente.getText().equals(""));         
@@ -526,7 +516,7 @@ public class frameSupply extends javax.swing.JFrame {
         supply.setId(Integer.parseInt(texId.getText()));
         supply.setName(texName.getText());
         supply.setIdCity(Integer.parseInt(texIdCity.getText()));
-        supply.setDate(jchDate.getDate());
+   //     supply.setDate(jchDate.getDate());
         supply.setPrice(Integer.parseInt(texPrice.getText()));
         supply.setIdProduct(Integer.parseInt(texIdProduct.getText()));
         supply.setIdClient(Integer.parseInt(texIdCliente.getText()));
@@ -554,7 +544,7 @@ public class frameSupply extends javax.swing.JFrame {
         texId.setText("");
         texName.setText("");
         texIdCity.setText("");
-        jchDate.setDate(new Date());
+    //    jchDate.setDate(new Date());
         texPrice.setText("");
         texIdProduct.setText("");
         texIdCliente.setText("");
@@ -600,7 +590,7 @@ public class frameSupply extends javax.swing.JFrame {
         texId.setText(""+supply.getId());
         texName.setText(supply.getName());
         texIdCity.setText("" + supply.getIdCity());
-        jchDate.setDate(supply.getDate());
+    //    jchDate.setDate(supply.getDate());
         texPrice.setText(""+supply.getPrice());
         texIdProduct.setText(""+ supply.getIdProduct());
         texIdCliente.setText(""+ supply.getIdClient());
